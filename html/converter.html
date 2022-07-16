@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Конвектор Валют</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../img/dollar2.png">
+  <link rel="stylesheet" href="../css/converter.css" />
+  <div class="games-page_button"> <a href="../html/Games_new.html" class="button-back">&larr;Games page</a></div>
+
+</head>
+<body><!---->
+    <img src="../img/obmen.jpg" alt="Games" id="bg">
+ <h1>Конвектор Валют</h1> 
+ <div class="grid">
+    <div class="grid__body">
+        <div class="grid__item">
+            <label for="school">Имеющаяся сумму:</label>
+            <input type="number" name="inp" value="" id="inp" placeholder="Имеющаяся сумму" > 
+        </div>
+        <div class="grid__item">
+            <label for="school">Имеющаяся валюта: </label>
+            <select id="buy">
+               <!-- <option id="buy" value="USD">UAH</option>-->
+                <option value="UAH">UAH</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="CSK">CSK</option>
+            </select>
+        </div>
+        <div class="grid__item">
+            <label for="school">Нужная валюта:</label>
+            <select id="sale">
+              <!--  <option id="sale" value="USD">UAH</option>-->
+                <option value="UAH">UAH</option>
+                <option value="USD" selected>USD</option>
+                <option value="EUR">EUR</option>
+                <option value="CSK">CSK</option>
+            </select>
+        </div>
+    </div>
+</div> 
+
+<div> 
+    <h1>Конвектированная валюта</h1> 
+    <input   value="" id="val" placeholder="Результат" > </div>
+
+<button class="button" onclick="func()">
+    <onclick=alert>
+      Перевести
+  </button>
+
+<h2>Текущий курс валют по отношению к гривне обновлён <var id="date"></var></h2>
+<div class="grid2">
+    <div class="grid__body2">
+        <div class="grid__item2">
+            <label2 for="school">USD</label>
+                <div id="usd"></div>
+        </div>
+        <div class="grid__item2">
+            <label2 for="school">EUR</label>
+                <div id="eur"></div>
+        </div>
+        <div class="grid__item2">
+            <label2 for="school">CSK</label>
+                <div id="csk"></div>
+        </div>
+    </div>
+</div> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--<script src="data.json"></script>-->
+
+<script src="../js/converter.js"></script>
+
+
+
+
+
+<script>
+$.getJSON("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json", function(data) {
+$('#usd').html(data[26].rate);
+}); 
+
+$.getJSON("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json", function(data) {
+$('#eur').html(data[32].rate);
+}); 
+
+$.getJSON("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json", function(data) {
+$('#csk').html(data[4].rate);
+});
+
+$.getJSON("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json", function(data) {
+$('#date').html(data[26].exchangedate);
+});
+
+$(function(){
+    $('#inp').focus(function(){
+$(this).addClass('add')
+    })
+    $('#inp').blur(function(){
+$(this).removeClass('add')
+    })
+})
+</script>
+
+ 
+
+
+</body>
+</html>

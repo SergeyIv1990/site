@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"    content="IE=Edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>TextShadowGeneration</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../img/lamp.jpg">
+<img src="../img/Pictures.jpg" alt="Games" id="bg">
+<a href="../index.html" class="button-back">&larr; Main menu</a>
+      <!---->
+<style>
+.button-back {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    display: inline-block;
+    border-width: 2px;    
+    border-color: white;
+    border-style: solid;
+    border-radius: 50px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 23px;
+    padding-right: 23px;
+    margin-bottom: 13px;
+    transition: 1s ease-out;
+}
+#bg {
+    position:fixed;
+    z-index: -1;
+    top:0;
+    left:0; 
+    min-width:100%;
+    min-height:100%;
+}
+.button-back:hover{
+    background-color: red; 
+}
+h1 {
+  margin-top:50px;
+  margin-bottom: 15px;
+  text-align: center;  
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 40px;
+  color: black;   
+}
+body {
+  text-align: center;
+  background-color: #eeeeee;
+}
+
+label{
+  display: block;
+}
+input[type="range"]{
+  width: 100%;
+}
+input[type="color"]{
+  border: none;
+  background-color: transparent;
+  width: 55px;
+  height: 55px;
+  padding: 0;
+  margin-bottom: 15px;
+}
+input[type="color"]:hover{
+  cursor: pointer;
+}
+textarea{
+  width: 100%;
+  resize: none;
+  margin-bottom: 15px;
+  max-width: 300px;
+  font-size: 13px;
+}
+.card{
+  height: 100%;
+  
+}
+.card-header {
+  font-weight: bold;
+  color: #ffffff;
+}
+      </style>
+  </head>
+  <body>
+
+<h1>Text shadow generation</h1>
+<!-- .container>.row>.col-x1-4.col-md-6*3>.card>.card-header+.card-body-->
+<div class="container">
+  <div class="row">
+    <div class="col-xl-4 col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary">Настройки:</div>
+        <div class="card-body">
+          <label for="font_size">Размер шрифта</label>
+            <input type="range" id="font_size" class="custom-range" min="8" max="40" step="1" value="40">
+          <label for="offsrt_x">Смещение оси по х</label>
+            <input type="range" id="offsrt_x" class="custom-range" min="-15" max="15" step="1" value="4">
+          <label for="offsrt_y">Смещение оси по у</label>
+            <input type="range" id="offsrt_y" class="custom-range" min="-15" max="15" step="1" value="-1">
+          <label for="blur">Размытие</label>
+            <input type="range" id="blur" class="custom-range" min="0" max="15" step="1" value="0">
+          </div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary">Цвет</div>
+        <div class="card-body">
+            <input type="color"   value="#ff0000"> 
+          <label for="opacity">Прозрачность</label>
+            <input class="custom-range" id="opacity" type="range" min="0" max="1" step="0.01" value="1">
+          </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary">Результат:</div>
+        <div class="card-body">
+          <label for="resultHex">Цвет в НЕХ</label>
+          <textarea  id="resultHex"  rows="4" readonly></textarea>
+          <label for="resultRgba">Цвет в Rgba</label>
+          <textarea  id="resultRgba"  rows="3" readonly></textarea>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>

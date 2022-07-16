@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flappy Bird!</title>
+  <!-- Добавление языка мэрри вэзэр-->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption&display=swap" rel="stylesheet">
+  <!-- Подключение стиля нормолизации-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+  <link rel="stylesheet" href="../css/JS_lessons2_css.css">
+  <link rel="shortcut icon" type="image/x-icon" href="../img/lamp.jpg">
+  <div class="lesson1"><a href="Games_new.html" class="button-back">&larr; Games page</a></div>
+  <div class="lesson1"><a href="JS_page.html" class="button-back2">&larr; JS lessons</a></div>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <img src="../img/bird_bg.jpg" alt="Games" id="bg">
+
+</head>
+
+<body>
+  <div class="header_title">Game Flippy Bird! Press any keys!<br> Любая клавиша или клик мышки на экран, поможет птички
+    полететь вверх<br>
+    (А если нужно вниз, поможет кнопка Bird DOWN)</div>
+
+  <canvas id="canvas" width="288" height="512"></canvas>
+  <script src="../js/JS_Fail_lessons2.js"></script>
+  <p class="Down">
+    <button class="buttonDown" onclick="moveDown()">
+      <onclick=alert>
+        Bird DOWN
+    </button>
+  </p>
+
+  <p1 class="reload" id="reload">
+    <button class="buttonReload" onclick="location.reload()">
+      <onclick=alert>
+        Играть ещё раз!
+    </button>
+  </p1>
+
+
+</body>
+
+</html>

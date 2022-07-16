@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Games</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/lamp.jpg">
+      <div class="games-page">
+        <div class="container_for_page">
+         <img src="../img/traxex.jpg" alt="Games" id="bg">
+          <div class="games-page_button"> <a href="../index.html" class="button-back">&larr; Main menu</a></div>
+          <h2>Текущие координаты курсора на страничке</h2>
+          <span id="xy"></span>.
+<!--Колоннна 1-->
+              <div class="col-4">
+                  <div class="portfolio-item">
+                <div class="portfolio-item__img"> 
+                  <a href="Ball_of_answers.html"><img src="../img/Ball.png" alt="ball of answers" width="250" height="250"> </a></div>
+                <div class="portfolio-item__title"> <a href="Ball_of_answers.html">Ball of answers</a> </div>
+                <div class="portfolio-item__texte">Шар предсказаний(вариант1)</div>
+              </div>
+              <div class="portfolio-item">
+                <div class="portfolio-item__img"> 
+                  <a href="21.html"><img src="../img/21/21.png" alt="ball of answers" width="250" height="250"> </a></div>
+                <div class="portfolio-item__title"> <a href="21.html" >Играть в 21</a> </div>
+                <div class="portfolio-item__texte"></div>
+              </div>
+              </div>
+        </div>
+      </div>
+<!--Колонна 2 -->
+      <div class="col-4">
+        <div class="portfolio-item">
+      <div class="portfolio-item__img"> 
+               <canvas id="canvas" width="334" height="334">
+                
+               </canvas>
+               <script src="../js/Ball_of_answer.js"></script>
+       <!-- <img src="../img/Ball_of_answers/magicball.png" alt="ball of answers" width="250" height="250"> </div>-->
+      <div class="portfolio-item__title"> <a id="my">Ball of answers</a> </div>
+      <div class="portfolio-item__texte">Шар предсказаний(вариант2)</div>
+    </div>
+    </div>
+    
+    <div class="portfolio-item">
+      <div class="portfolio-item__img"> 
+      <a href="Black_jack.html"><img src="../img/balck_jack.png" alt="Balck Jack" width="250" height="150"> </a></div>
+      <div class="portfolio-item__title"> <a href="Black_jack.html" >Balck Jack</a> </div>
+      <div class="portfolio-item__texte"></div>
+    </div>
+    </div>
+</div>
+<!--Колонна 3 -->
+<div class="col-4">
+  <div class="portfolio-item">
+<div class="portfolio-item__img"> 
+
+         <div class="container2">
+         <canvas id="canvas2" width="600" height="300"></canvas>
+         <div class="StartPage">
+         <h2>Black Jack (21)</h2>
+         <div class="play">PLAY</div>
+         </div>
+         <div class="gameover hide"></div>
+         </div>
+         <script src="../js/21.js"></script>
+        <script src="../js/21_options.js"></script>
+ 
+
+<div class="games_title"> <a id="my">       Black Jack (21)      </a> </div>
+</div>
+</div>
+</div>
+    
+<script type="text/javascript">
+  function init() {
+      if (document.layers) document.captureEvents(Event.MOUSEMOVE);
+      document.onmousemove = mousemove;
+  }
+  function mousemove(event) {
+      var mouse_x = mouse_y = 0;
+      if (document.attachEvent != null) {
+          mouse_x = window.event.clientX;
+          mouse_y = window.event.clientY;
+      } else if (!document.attachEvent && document.addEventListener) {
+          mouse_x = event.clientX;
+          mouse_y = event.clientY;
+      }
+      status = "x = " + mouse_x + ", y = " + mouse_y;
+      document.getElementById('xy').innerHTML = "x = " + mouse_x + ", y = " + mouse_y;
+  }
+  init()
+  </script>
+
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Images.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/lamp.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    
+    <style>
+    body {
+        text-align: center;
+        background-color: #eeeeee;
+       }
+      label{
+        display: block;
+      }
+      input[type="range"]{
+        width: 100%;
+      }
+      input[type="color"]{
+        border: none;
+        width: 55px;
+        height: 55px;
+        padding: 0;
+        margin-bottom: 15px;
+      }
+      input[type="color"]:hover{
+        cursor: pointer;
+      }
+      textarea{
+        width: 100%;
+        resize: none;
+        margin-bottom: 15px;
+        max-width: 300px;
+        font-size: 13px;
+      }
+      .card {
+        height: 100%;
+      }
+      .card-header{
+        font-weight: bold;
+        color: #ffffff;
+      }
+      .row >div{
+        margin-bottom: 15px;
+      }
+    </style>
+
+      <div class="games-page">
+        <div class="container_for_page">
+         <img src="../img/article.jpg" alt="Games" id="bg">
+          <a href="../index.html" class="button-back">&larr; Main menu</a>
+
+        </div>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="../js/images.js"></script>
+     <!--  <h1>Some text</h1>-->
+  
+     <div class="button">-</div>
+    <div class="gallery">
+       <div class="big">
+          <img src="../img/images/gallery/start.jpg" alt="Старт" />
+       </div>
+       <div class="small">
+          <a href="../img/images/gallery/1.jpg"><img src="../img/images/gallery/1_mini.jpg" alt="Миниатюра 1" /></a>
+          <a href="../img/images/gallery/2.jpg"><img src="../img/images/gallery/2_mini.jpg" alt="Миниатюра 2" /></a>
+          <a href="../img/images/gallery/3.jpg"><img src="../img/images/gallery/3_mini.jpg" alt="Миниатюра 3" /></a>
+          <a href="../img/images/gallery/4.jpg"><img src="../img/images/gallery/4_mini.jpg" alt="Миниатюра 4" /></a>
+       </div>
+    </div>
+    </head>
+  <body>
+ 
+<h1>Text shadow generation</h1>
+<!-- .container>.row>.col-x1-4.col-md-6*3>.card>.card-header+.card-body-->
+<div class="container">
+<div class="container">
+  <div class="row">
+    <div class="col-xl-4 col-md-4">
+      <div class="card">
+        <div class="card-header bg-primary">Настройки:</div>
+        <div class="card-body">
+          <label for="font_size">Размер шрифта</label>
+          <input type="range" id="font_size" class="custom-range" min="8" max="40" step="1" value="40">
+          <label for="offset_x">Смещение оси по х</label>
+          <input type="range" id="offset_x" class="custom-range" min="-15" max="15" step="1" value="4">
+          <label for="offset_y">Смещение оси по у</label>
+          <input type="range" id="offset_y" class="custom-range" min="-15" max="15" step="1" value="-1">
+          <label for="blur">Размытие</label>
+          <input type="range" id="blur" class="custom-range" min="0" max="15" step="1" value="0">
+        </div>
+        </div>
+      </div>
+      <div class="col-xl-4 col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary">Цвет</div>
+          <div class="card-body">
+              <input type="color"   value="#ff0000"> 
+            <label for="opacity">Прозрачность</label>
+              <input class="custom-range" id="opacity" type="range" min="0" max="1" step="0.01" value="1">
+            </div>
+          </div>
+      </div>
+    <div class="col-xl-4 col-md-12">
+      <div class="card">
+        <div class="card-header bg-primary">Результат:</div>
+        <div class="card-body">
+          <label for="resultHex">Цвет в НЕХ</label>
+          <textarea  id="resultHex"  rows="4" readonly></textarea>
+          <label for="resultRgba">Цвет в Rgba</label>
+          <textarea  id="resultRgba"  rows="3" readonly></textarea>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  function cssShadow({font_size, offset_x, offset_y, blur, opacity, color, rgba}){
+var cssStyle = offset_x + 'px ' + offset_y + 'px ' + blur + 'px ' + rgba;
+$('h1').css('text-shadow', cssStyle);
+$('#resultHex').val('background-color:' + color + ';\nopacity: ' + opacity +';\nfont_size: ' + font_size + 'px;');
+$('#resultRgba').val('text-shadow: ' + offset_x + 'px ' + offset_y + 'px ' + blur + 'px \n' +rgba + ';\nfont_size: ' + font_size + 'px;')
+  }
+
+  cssShadow({font_size:40, offset_x:4, offset_y:-1, blur:0, opacity:1, color:'#ff0000', rgba:'rgba(255, 0, 0, 1)'})
+
+  $(document).on('input change', 'input', function(){
+    var font_size = $('#font_size').val();
+    var offset_x = $('#offset_x').val();
+    var offset_y = $('#offset_y').val();
+    var blur = $('#blur').val();
+    var opacity = $('#opacity').val();
+    var color = $('input[type="color"]').val() + '';
+    var red16 = color[1] + '' + color[2];
+    var green16 = color[3] + '' + color[4];
+    var blue16 = color[5] + '' + color[6];
+    var red10 = parseInt(red16, 16);
+    var green10 = parseInt(green16, 16);
+    var blue10 = parseInt(blue16, 16);
+    var rgba = 'rgba(' + red10 +', '+ green10 + ', ' + blue10 + ', ' + opacity + ')';
+    console.log(rgba, red16, green16, blue16, red10, green10, blue10, )
+
+    $('h1').css('fontSize', font_size + 'px');
+    cssShadow({
+      font_size: font_size, 
+      offset_x: offset_x, 
+      offset_y: offset_y, 
+      blur: blur, 
+      opacity: opacity, 
+      color: color, 
+      rgba: rgba,
+    });
+  })
+</script>
+  </body>
+</html>

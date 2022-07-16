@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS</title>
+        <!-- Добавление языка мэрри вэзэр-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/lessons1_css.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/lamp.jpg">
+    <div class="lesson1"><a href="CSS_page.html" class="button-back">&larr; CSS lessons</a></div>
+</head>
+<body>
+ 
+    <div class="container">
+         <div class="row">
+            <div class="col-4">
+                <div class="container_linear"></div>
+            </div>
+            <div class="col-4">
+                <div class="container_radial"></div>
+            </div>
+        </div>    
+    </div>
+   
+</body>
+
+<div class="container">
+        <div class="row">
+           <div class="col-4">
+    <div class="content">
+        <h2>Код CSS для создания таких градиент</h2>
+        <ul><li>.container{<br>
+            width: 400px;<br>
+            height: 300px;<br>
+            margin-top: 100px;<br>
+            margin-left: 150px;<br>
+            background-color: yellow;<br>
+            background: -webkit-linear-gradient(top right, black, red, yellow  );<br>
+            background: -moz-linear-gradient(top right, black, red, yellow  );<br>
+            background: -o-linear-gradient(top right, black, red, yellow  );<br>
+            background: -ms-linear-gradient(top right, black, red, yellow  );<br>
+        }<br></li>
+           <li> .container{<br>
+            width: 400px;<br>
+            height: 300px;<br>
+            margin-top: 100px;<br>
+            margin-left: 150px;<br>
+            background: -webkit-radial-gradient(center, black, red, yellow  );<br>
+            background: -moz-radial-gradient(center, black, red, yellow  );<br>
+            background: -o-radial-gradient(center, black, red, yellow  );<br>
+            background: -ms-radial-gradient(center, black, red, yellow  );<br>
+            }<br></li></ul>
+        </div>
+    </div>
+
+    <div class="col-4">
+            <div class="content">
+                <h2>Код HTML для создания таких градиент</h2>
+                    <ul>&lt;!DOCTYPE html><br>
+                    &lt;html lang="ru"><br>
+                    &lt;head><br>
+                    &lt;meta charset="UTF-8"><br>
+                    &lt;title>CSS&lt;/title><br>
+                    Добавление языка мэрри вэзэр<br>
+                    &lt;link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans<br>+Caption&display=swap" rel="stylesheet"><br>
+                    &lt;link rel="stylesheet" href="../css/lessons1_css.css"><br>
+                    &lt;link rel="shortcut icon" type="image/x-icon" href="../img/lamp.jpg"><br>
+                    &lt;div class="lesson1">&lt;a href="CSS_page.html" <br>class="button-back">&larr; CSS lessons&lt;/a>&lt;/div><br>
+                    &lt;/head><br>
+                    &lt;body><br>
+                    &lt;div class="container">&lt;/div><br>
+                    &lt;/body><br> 
+                    &lt;/html>
+                    </ul>
+                </div>
+            </div>
+      
+      
+        </div> 
+</div>
+
+
+</html>

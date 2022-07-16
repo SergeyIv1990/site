@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>SNAKE</title>
+        <!-- Добавление языка мэрри вэзэр-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|PT+Sans+Caption&display=swap" rel="stylesheet">
+    <!-- Подключение стиля нормолизации
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">-->
+
+    <link rel="stylesheet" href="../css/JS_lessons3_css.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/lamp.jpg">
+    <div class="lesson1"><a href="Games_new.html" class="button-back">&larr; Games page</a></div>
+    <div class="lesson1"><a href="JS_page.html" class="button-back2">&larr; JS lessons</a></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <img src="../img/snake_bg.jpg" alt="Games" id="bg">  
+    <button class="buttonDown" style="font-size: 25px; position: absolute;margin-left:300px; margin-top:-100px; cursor:pointer; font-weight: 700;
+    text-decoration: none; color: black; text-transform: uppercase; letter-spacing: 1.6px;  display: block; border-width: 2px;    
+    border-color: black; border-style: solid; border-radius: 50px; padding-top: 8px; padding-bottom: 8px; padding-left: 23px;
+    padding-right: 23px; margin-bottom: 13px; transition: 1s ease-out;background-color: green;" 
+    onclick="location.reload()"><onclick=alert>Играть ещё раз</button>
+</head>
+<body>
+  <div class="header_title">Game Snake! Press any Arrow keys!</div>
+ 
+ <button id="buttonUp" style="margin-left: 125px; position: absolute; padding-left: 277px; padding-right: 277px;cursor: pointer;background-color: green;" > 
+  <img src="../img/games_snake/Up.png" width="50" height="50"/><onclick=alert></button>
+  <button id="buttonLeft" style="margin-left: 60px; position: absolute; padding-top:330px; padding-bottom:330px;cursor: pointer;background-color: green; ">
+  <img src="../img/games_snake/Left.png" width="50" height="50"/><onclick=alert></button>
+  <button id="buttonRight" style="margin-left: 730px; position: absolute; padding-top:330px; padding-bottom:330px;cursor: pointer;background-color: green;  ">
+  <img src="../img/games_snake/Right.png" width="50" height="50"/><onclick=alert></button>
+  <button id="buttonDown" style="margin-top: 658px;margin-left: 125px; position: absolute; padding-left: 277px; padding-right: 277px;cursor: pointer;background-color: green;">
+    <img src="../img/games_snake/Down.png"  width="50" height="50"/><onclick=alert></button>
+  <canvas id="canvas" width="608" height="608"></canvas>
+<script src="../js/JS_Fail_lessons3.js"></script>
+
+
+    
+
+      
+      
+
+
+
+
+
+
+</body>
+
+</html>
